@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phuong trinh bac 2</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="3">Giải phương trình bậc 2: ax2 +bx + c = 0</th>
+    </tr>
+    <tr>
+        <td>a</td>
+        <td>b</td>
+        <td>c</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input id="a"></td>
+        <td><input id="b"></td>
+        <td><input id="c"></td>
+        <td>
+            <button onclick="giaitoan()">Giai toan</button>
+        </td>
+    </tr>
+</table>
+<p id="ketqua"></p>
+<script>
+    function giaitoan() {
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+        let c = document.getElementById("c").value;
+        if (a==0) {
+            if (b==0){
+                document.getElementById("ketqua").innerHTML="Phương trình vô nghiệm"
+            }
+            else {
+                let x=-c/a;
+            document.getElementById("ketqua").innerHTML="Phương trình có nghiệm là " + x;
+            }
+        }
+        else {
+            let delta=b*b-(4*a*c);
+            if (delta<0) {
+                document.getElementById("ketqua").innerHTML="Phương trình vô nghiệm";
+            }
+            else if (delta==0) {
+                let x=-b/(2*a);
+                document.getElementById("ketqua").innerHTML="Phương trình có nghiệm kép là " + x;
+            }
+            else {
+                let x1=-b- (Math.sqrt(delta)/(2*a));
+                let x2=-b+ (Math.sqrt(delta)/(2*a));
+            document.getElementById("ketqua").innerHTML="Phương trình có 2 nghiệm là " + x1 + "và" + x2;
+            }
+        }
+
+    }
+
+</script>
+</body>
+</html>
